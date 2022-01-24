@@ -4,7 +4,7 @@ public class MonPremierProgramme {
 
 	public static void main(String[] args) {
 		//TO DO 
-		System.out.println("Mon premier programme");
+		System.out.println("Mon premier programme :)");
 
 	}
 
