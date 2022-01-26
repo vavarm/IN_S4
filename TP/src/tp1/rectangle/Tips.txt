@@ -1,0 +1,4 @@
+Dans le package rectangle, tous les fichiers portent l'instruction 'package tp1.rectangle;' car ceux-ci sont situés dans le même répertoire (src/tp1/rectangle) et ont donc accès les un avec les autres.
+Dans Rectangle.java il y a une énumération et nous pouvons noter que celle-ci doit se situer dans la classe.
+Un fichier = une classe et celle-ci doit porter le même nom que le fichier.
+La fonction main doit ne doit se situer que dans une seule classe. C'est-elle qui est appellée lors de l'exécution.

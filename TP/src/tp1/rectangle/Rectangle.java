@@ -12,7 +12,7 @@ public class Rectangle {
     private int aire;
     private int perimetre;
     private Couleur couleur = Couleur.Vert;
-    private Point2D position;
+    public Point2D position;
 
     // attributs relatifs à la classe Rectangle
     public static final int nbCotes = 4;
