@@ -7,6 +7,9 @@
 	"settings": {
 		"java.project.sourcePaths": [
 			"TP/src"
+		],
+		"java.project.outputPaths": [
+			"TP/bin"
 		]
 	}
 }

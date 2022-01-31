@@ -9,7 +9,7 @@ public class Canvas {
         Rectangle.Couleur c1 = Rectangle.Couleur.Rouge; // création d'une couleur
         Rectangle r2 = new Rectangle(8, 3, c1, 10, 40); // création d'un objet Rectangle avec des paramètres
         System.out.println("r2 :: " + r2.toString()); // affichage de tous les attributs de l'objet r2
-        r2.getPosition().setPosX(60); // modification de la position sur l'axe X de r2
+        r2.getPosition().setPosX(60); // modification de la position de r2 sur l'axe X
         System.out.println("La position sur l'axe x de mon deuxième rectangle est : " + r2.getPosition().getPosX());
         System.out.println("====================");
     }
