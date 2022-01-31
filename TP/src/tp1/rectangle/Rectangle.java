@@ -12,7 +12,7 @@ public class Rectangle {
     private int aire;
     private int perimetre;
     private Couleur couleur = Couleur.Vert;
-    public Point2D position;
+    private Point2D position;
 
     // attributs relatifs à la classe Rectangle
     public static final int nbCotes = 4;
@@ -30,6 +30,10 @@ public class Rectangle {
         this.perimetre = 2 * (this.longueur + this.largeur);
         this.couleur = _couleur;
         this.position = new Point2D(_posX, _posY);
+    }
+
+    public Point2D getPosition() {
+        return this.position;
     }
 
     // méthode qui retourne tous les attributs de l'objet courant afin de les
