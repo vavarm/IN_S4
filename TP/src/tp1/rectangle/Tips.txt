@@ -2,3 +2,15 @@ Dans le package rectangle, tous les fichiers portent l'instruction 'package tp1.
 Dans Rectangle.java il y a une énumération et nous pouvons noter que celle-ci doit se situer dans la classe.
 Un fichier = une classe et celle-ci doit porter le même nom que le fichier.
 La fonction main doit ne doit se situer que dans une seule classe. C'est-elle qui est appellée lors de l'exécution.
+ctrl + clic sur un type pour afficher sa déclaration
+clic droit + [Source] pour implémenter automatiquement les getters et les setters
+clic droit + [Refactor] + [Rename] renommer une classe/un objet dans tout le fichier
+System.err.println("Erreur") affiche "Erreur" en rouge dans la console
+
+java.utils.scanner
+    Scanner scanner = new Scanner(System.in);
+    String label = "";
+    System.out.println("Gimme a word");
+    label = scanner.next(); //nextInt() to get an integer
+    scanner.close();
+    System.out.println(label);
