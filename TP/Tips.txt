@@ -1,9 +1,10 @@
-Dans le package rectangle, tous les fichiers portent l'instruction 'package tp1.rectangle;' car ceux-ci sont situÃ©s dans le mÃªme rÃ©pertoire (src/tp1/rectangle) et ont donc accÃ¨s les un avec les autres.
-Dans Rectangle.java il y a une Ã©numÃ©ration et nous pouvons noter que celle-ci doit se situer dans la classe.
-Un fichier = une classe et celle-ci doit porter le mÃªme nom que le fichier.
-La fonction main doit ne doit se situer que dans une seule classe. C'est-elle qui est appellÃ©e lors de l'exÃ©cution.
-ctrl + clic sur un type pour afficher sa dÃ©claration
-clic droit + [Source] pour implÃ©menter automatiquement les getters et les setters
+Dans le package rectangle, tous les fichiers portent l'instruction 'package tp1.rectangle;' car ceux-ci sont situés dans le même répertoire (src/tp1/rectangle) et ont donc "accès les un aux autres".
+Dans Rectangle.java il y a une énumération et nous pouvons noter que celle-ci doit se situer dans la classe.
+Un fichier = une classe et celle-ci doit porter le même nom que le fichier.
+La fonction main doit ne doit se situer que dans une seule classe. C'est-elle qui est appellée lors de l'exécution.
+Mettre le curseur sur une erreur pour afficher le type d'erreur
+ctrl + clic sur un type pour afficher sa déclaration
+clic droit + [Source] pour implémenter automatiquement les getters et les setters
 clic droit + [Refactor] + [Rename] renommer une classe/un objet dans tout le fichier
 System.err.println("Erreur") affiche "Erreur" en rouge dans la console
 
