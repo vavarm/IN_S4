@@ -18,10 +18,10 @@ public class Examen {
     }
 
     public void setNote(double note) {
-    	if(note>=0 && note<=20)
-    		this.note = note;
-    	else
-    		System.out.println("La note saisie n'est pas dans l'intervalle de défintion des notes !");
+        if (note >= 0 && note <= 20)
+            this.note = note;
+        else
+            System.out.println("La note saisie n'est pas dans l'intervalle de dï¿½fintion des notes !");
     }
 
     public String getMatiere() {
