@@ -10,7 +10,7 @@ public class Etudiant {
     private int age;
     private Boolean codeIns;
     private Nationality codePays;
-    private Examen examenMaths = new Examen(0, "Math�matiques");
+    private Examen examenMaths = new Examen(0, "Mathématiques");
     private Examen examenInformatique = new Examen(0, "Informatique");
     private Examen examenBiologie = new Examen(0, "Biologie");
 
@@ -55,7 +55,11 @@ public class Etudiant {
         int year = LocalDate.now().getYear();
         if (anneeNaissance > 0 && year >= anneeNaissance + 5) {
             this.anneeNaissance = anneeNaissance;
-            this.age = year - this.anneeNaissance;
+            this.age = year - this.anneeNaissance; /*
+                                                    * OR (IF dateNaissance IS A LocalDate) this.age =
+                                                    * dateNaissance.until(now).getYears();
+                                                    * => difference in years between dateNaissance and now
+                                                    */
         }
     }
 
@@ -120,7 +124,7 @@ public class Etudiant {
     }
 
     public void saisieNotes(Scanner scanner) {
-        double maths = getNote(scanner, "Math�matiques");
+        double maths = getNote(scanner, "Mathématiques");
         double info = getNote(scanner, "Informatique");
         double bio = getNote(scanner, "Biologie");
         miseAJourNotes(maths, info, bio);
@@ -133,7 +137,7 @@ public class Etudiant {
             this.examenBiologie.setNote(bio);
         } else
             System.out.println(
-                    "Une ou plusieures notes saisies ne fait/font pas partie/s de l'intervalle de d�finition !");
+                    "Une ou plusieures notes saisies ne fait/font pas partie/s de l'intervalle de définition !");
     }
 
     public double getNote(Scanner scanner, String arg) {
@@ -142,7 +146,7 @@ public class Etudiant {
 
     public Nationality saisieNationalite(Scanner scanner) {
         Nationality nat;
-        System.out.println("Veuillez saisir le num�ro correspondant � la nationalit�");
+        System.out.println("Veuillez saisir le numéro correspondant à la nationalit�");
         System.out.println("1. FRANCAIS");
         System.out.println("2. ETRANGER_FRANCOPHONE");
         System.out.println("3. ETRANGER_NON_FRANCOPHONE");
