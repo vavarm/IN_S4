@@ -1,10 +1,10 @@
-Dans le package rectangle, tous les fichiers portent l'instruction 'package tp1.rectangle;' car ceux-ci sont situés dans le même répertoire (src/tp1/rectangle) et ont donc "accès les un aux autres".
-Dans Rectangle.java il y a une énumération et nous pouvons noter que celle-ci doit se situer dans la classe.
-Un fichier = une classe et celle-ci doit porter le même nom que le fichier.
-La fonction main doit ne doit se situer que dans une seule classe. C'est-elle qui est appellée lors de l'exécution.
+Dans le package rectangle, tous les fichiers portent l'instruction 'package tp1.rectangle;' car ceux-ci sont situï¿½s dans le mï¿½me rï¿½pertoire (src/tp1/rectangle) et ont donc "accï¿½s les un aux autres".
+Dans Rectangle.java il y a une ï¿½numï¿½ration et nous pouvons noter que celle-ci doit se situer dans la classe.
+Un fichier = une classe et celle-ci doit porter le mï¿½me nom que le fichier.
+La fonction main doit ne doit se situer que dans une seule classe. C'est-elle qui est appellï¿½e lors de l'exï¿½cution.
 Mettre le curseur sur une erreur pour afficher le type d'erreur
-ctrl + clic sur un type pour afficher sa déclaration
-clic droit + [Source] pour implémenter automatiquement les getters et les setters
+ctrl + clic sur un type pour afficher sa dï¿½claration
+clic droit + [Source] pour implï¿½menter automatiquement les getters et les setters
 clic droit + [Refactor] + [Rename] renommer une classe/un objet dans tout le fichier
 System.err.println("Erreur") affiche "Erreur" en rouge dans la console
 
@@ -15,3 +15,10 @@ java.utils.scanner
     label = scanner.next(); //nextInt() to get an integer
     scanner.close();
     System.out.println(label);
+
+Abstraction de mÃ©thode:
+    public abstract void NomMethode();
+
+"On invoque une mÃ©thode quand on l'appelle"
+
+Convention d'Ã©criture des constantes en Java: VALEUR_CONSTANTE
