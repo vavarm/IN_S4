@@ -77,6 +77,8 @@ public abstract class ObjetPostal {
     public void setPoids(double poids) {
         if (poids > 0)
             this.poids = poids;
+        else
+            System.err.println("La valeur de poids doit être positive");
     }
 
     /**
