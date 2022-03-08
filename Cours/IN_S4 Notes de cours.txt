@@ -1,0 +1,82 @@
+[1]
+paramètre réel => dans l'appel de la méthode / paramètre formel => dans la structure de la méthode
+
+[3_4]
+Héritage (en LP), spécialisation/généralisation (en UML)
+    En java: public class Classe extends [ClasseHéritée]{}
+    En UML: lier les sous-classes à la super classe via des flèches
+    Héritage par genre et spécificités
+
+Abstraction de classe: (la classe abstraite ne peut pas directement créer d'objet
+    En java: public abstract class Classe{}
+    En UML: Classe {abstract}
+    
+Redéfinition par masquage:
+    réécrire une méthode dans une classe créée masque la méthode de la classe héritée
+
+Redéfinition par spécialisation:
+    afin d'appeler une méthode masquée de la classe héritée: utiliser le mot clé super
+    
+Classe héritée: Super Classe
+Classe qui hérite: Sous-classe
+
+Règle de redéfinition d’une méthode pour la liaison dynamique:
+    *même nom
+    *même liste de type de paramètres
+    *type de retour identique ou plus spécialisé
+    *visibilité identique ou plus large (ex. protected -> public)
+    
+instanceof : vérifie la classe de l’objet
+(Classe) : réalise un typecast
+@Override : annotation recommandée devant la méthode, pour vérifier la règle de bonne redéfinition par le compilateur
+
+obj1.equals(obj2) : true si obj1=obj2 (valable aussi pour les String)
+
+Synthèse:
+    *Spécialisation/généralisation, discriminants, contraintes
+    *extends : définition de sous-classe (public class Classe extends SuperClasse)
+    *super(...) : appel du constructeur de la super-classe
+    *super.meth() : appel de la méthode meth de la super-classe
+    *Liaison dynamique
+    *Différents schémas de définition des méthodes
+    *Classes et méthodes abstraites
+    *Règle de redéfinition pour la liaison dynamique
+    *instanceof et typecast
+
+paramètre hérité / paramètre spécifique
+méthode héritée / méthode spécifique
+
+une méthode abstraite n'a pas de corps et est masquée par les méthodes des sous-classes
+une classe qui possède des méthodes abstraites est aussi abstraite => on ne peut pas alors créer d'instances directement à partir de cette classe
+
+[5 CoursAssociation]
+
+UML
+    -Nom de l'association
+    -Orientation de l'association
+    -Nom de rôles
+    -Multiplicité
+    -Navigabilité
+
+Java
+    se traduit par des attributs d'objets (sous forme d'objets ou de liste d'objets)
+
+    Réification: se traduit par la création d'une classe de liaison
+        Exemple: la classe location qui lie une agence immobilière avec des appartements
+
+    Collections
+        import java.util.ArrayList;
+
+        ArrayList<TypeOfObjectOrInterface>
+        .add(obj)
+        .contains(obj) @return Boolean
+        .get(index) @return Object (index va de 0 à .size()-1)
+        .isEmpty() @return Boolean
+        .size() @return int
+        .remove(index)
+        .remove(obj)
+        Collections.unmodifiableList(this.arrayList) => collection to send by a get method
+
+    Itérateur
+        ForEach en java:
+            for(Object obj : this.array) {//do sth}
