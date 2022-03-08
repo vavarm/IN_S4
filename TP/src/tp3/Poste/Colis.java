@@ -1,4 +1,4 @@
-package tp4.Poste;
+package tp3.Poste;
 
 public class Colis extends ObjetPostal {
     private String contenu;
