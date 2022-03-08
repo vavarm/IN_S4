@@ -22,5 +22,11 @@ public class Main {
 
         System.out.println(ce2.toString());
 
+        ce2.setPoids(-6);
+
+        ce2.setPoids(400);
+
+        System.out.println(ce2.toString());
+
     }
 }
