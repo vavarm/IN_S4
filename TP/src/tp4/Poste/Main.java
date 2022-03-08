@@ -1,7 +1,7 @@
 package tp4.Poste;
 
 public class Main {
-    public void main(String[] args) {
+    public static void main(String[] args) {
         /*
          * Colis Express code postal/destination/taux de recommandation/volume/valeur d
          * ́eclar ́ee/poids/num ́erode suivi
@@ -14,5 +14,13 @@ public class Main {
                 true);
 
         System.out.println(ce1.toString());
+
+        ColisExpress ce2 = new ColisExpress("famille Artick, igloo 90, baie des vents",
+                "famille Antartick, igloo 32, mont Azur", "9506", 0.1, 0.01,
+                TauxRecommandation.ZERO, "crayon à papier", 0.5,
+                true);
+
+        System.out.println(ce2.toString());
+
     }
 }

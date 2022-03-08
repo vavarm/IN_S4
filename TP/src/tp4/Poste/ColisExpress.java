@@ -70,7 +70,7 @@ public class ColisExpress extends Colis {
 
     @Override
     public String toString() {
-        return super.toString() + "/" + getVolume() + "/" + getValeurDeclaree() + "/" + getPoids() + "/" + getNumero();
+        return super.toString() + "/" + getPoids() + "/" + getNumero();
     }
 
 }
