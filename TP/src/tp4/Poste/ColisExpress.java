@@ -55,6 +55,9 @@ public class ColisExpress extends Colis {
     public void setPoids(double poids) {
         if (poids < 30)
             super.setPoids(poids);
+        else {
+            System.err.println("La valeur de poids entrée est trop élevée (>=30)");
+        }
     }
 
     @Override
