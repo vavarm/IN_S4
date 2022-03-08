@@ -80,3 +80,6 @@ Java
     Itérateur
         ForEach en java:
             for(Object obj : this.array) {//do sth}
+
+    Tableaux primitifs
+        Warn: les tableaux sont aussi pointeurs (comme tout en java :D)
