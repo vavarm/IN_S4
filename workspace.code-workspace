@@ -7,7 +7,46 @@
 	"settings": {
 		"java.project.sourcePaths": [
 			"TP/src"
-		]
+		],
+		"cSpell.enabled": true,
+		"cSpell.language": "en,fr",
+		"cSpell.enabledLanguageIds": [
+			"asciidoc",
+			"c",
+			"cpp",
+			"csharp",
+			"css",
+			"git-commit",
+			"go",
+			"graphql",
+			"handlebars",
+			"haskell",
+			"html",
+			"jade",
+			"javascript",
+			"javascriptreact",
+			"json",
+			"jsonc",
+			"jupyter",
+			"latex",
+			"less",
+			"markdown",
+			"php",
+			"plaintext",
+			"python",
+			"pug",
+			"restructuredtext",
+			"rust",
+			"scala",
+			"scss",
+			"swift",
+			"text",
+			"typescript",
+			"typescriptreact",
+			"vue",
+			"yaml",
+			"yml"
+		],
 	}
 
 }

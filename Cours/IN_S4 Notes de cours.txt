@@ -26,7 +26,7 @@ Règle de redéfinition d’une méthode pour la liaison dynamique:
     *type de retour identique ou plus spécialisé
     *visibilité identique ou plus large (ex. protected -> public)
     
-instanceof : vérifie la classe de l’objet
+instanceOf : vérifie la classe de l’objet
 (Classe) : réalise un typecast
 @Override : annotation recommandée devant la méthode, pour vérifier la règle de bonne redéfinition par le compilateur
 
@@ -41,7 +41,7 @@ Synthèse:
     *Différents schémas de définition des méthodes
     *Classes et méthodes abstraites
     *Règle de redéfinition pour la liaison dynamique
-    *instanceof et typecast
+    *instanceOf et typecast
 
 paramètre hérité / paramètre spécifique
 méthode héritée / méthode spécifique
@@ -49,7 +49,7 @@ méthode héritée / méthode spécifique
 une méthode abstraite n'a pas de corps et est masquée par les méthodes des sous-classes
 une classe qui possède des méthodes abstraites est aussi abstraite => on ne peut pas alors créer d'instances directement à partir de cette classe
 
-[5 CoursAssociation]
+[5 CoursAssociations]
 
 UML
     -Nom de l'association
@@ -83,3 +83,42 @@ Java
 
     Tableaux primitifs
         Warn: les tableaux sont aussi pointeurs (comme tout en java :D)
+
+[6 CoursAssociationsComplexes]
+
+*Agrégation/Composition
+    Agrégation (UML: losange vide) (n trucs sont composés de n machins)
+    Composition (UML: losange noir) (1 truc est composé de n machins)
+
+*Interne
+    association réflexive (d'une classe à la même classe)
+
+*Dérivée
+    association acquise par d'autre associations
+
+*N-aire (ternaire)
+    (UML: "gros" losange)
+    relie des plus de deux classes entre elles (>association binaire)
+    (arité = nombre de classes liées ensembles)
+    (multiplicité de chaque classe = nombre de liaisons que la classe peut effectuer)
+
+*Qualifiée
+    ~ clé primaire
+
+*Classes d'association
+    (UML: possibilité de les modéliser avec des associations ternaires,
+     des associations binaires auxquelles on ajoute des classes d'association liées par des pointillées
+     ou au milieu de l'association)
+
+**Dictionnaire associatif ou map
+    clé: qualification de l'association (~ clé primaire)
+    valeur: objet qui porte la qualification
+
+    HashMap<TClef, TValeur> table = new HashMap<>();
+    .get(TClef key)
+    .put(TClef key, TValeur value)
+    .remove(TClef key)
+    .values() retourne la collection des valeurs
+    .keySet() retourne la collection des clés
+    .containsKey(TClef key)
+    .containsValue(TValue value)

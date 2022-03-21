@@ -76,7 +76,7 @@ public abstract class Additif {
 
     public void saisie(Scanner clavier) {
         System.out.println(
-                "Ecrire les attributs de Additif en les séparant par des retours à la ligne\nnom/code/fonction/autoriseEnFra\n[");
+                "Écrire les attributs de Additif en les séparant par des retours à la ligne\nnom/code/fonction/autoriseEnFra\n[");
         this.setNom(clavier.next());
         this.setCode(clavier.next());
         this.setFonction(TypeFonction.valueOf(clavier.next().toUpperCase()));
