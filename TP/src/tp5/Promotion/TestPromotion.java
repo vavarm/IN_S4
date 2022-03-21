@@ -24,7 +24,7 @@ public class TestPromotion {
         Promotion p = new Promotion("groupe PEIP", 2022);
 
         p.inscrire(e1);
-        p.inscrire(e1);
+        p.inscrire(e2);
         p.inscrire(e3);
         p.inscrire(e6);
         p.afficheResultat();
@@ -79,5 +79,6 @@ public class TestPromotion {
          * +p.etuEtrangerNonFranco());
          * System.out.println("\n---Majors ----\n"+p.majors());
          */
+
     }
 }

@@ -70,7 +70,10 @@ public class Promotion {
     }
 
     public void inscrire(Etudiant etudiant) {
-        etudiants.add(etudiant);
+        if (this.etudiants.contains(etudiant))
+            System.out.println("L'étudiant est déjà présent dans la liste");
+        else
+            etudiants.add(etudiant);
     }
 
     public double moyenneGenerale() {
