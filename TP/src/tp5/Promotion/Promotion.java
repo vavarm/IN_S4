@@ -50,28 +50,24 @@ public class Promotion {
     /**
      * @return ArrayList<Etudiant> return the etudiants
      */
-    public Collection<Etudiant> getEtudiants() {
-        return Collections.unmodifiableList(etudiants);
+    public List<Etudiant> getEtudiants() {
+        return (List<Etudiant>) Collections.unmodifiableList(etudiants);
     }
 
     public Etudiant rechercheIndex(int i) {
         if (i >= 0 && i < etudiants.size())
             return etudiants.get(i);
+        System.err.println("L'index de recherche de l'étudiant est hors limite de la liste des étudiants");
         return null;
     }
 
     public int nbEtudiants() {
-        int n = 0;
-        for (int i = 0; i < etudiants.size(); i++) {
-            if (etudiants.get(i) != null)
-                n++;
-        }
-        return n;
+        return etudiants.size();
     }
 
     public void inscrire(Etudiant etudiant) {
         if (this.etudiants.contains(etudiant))
-            System.out.println("L'étudiant est déjà présent dans la liste");
+            System.out.println("L'étudiant est déjà présent dans la liste"); // WARN - use syserr to print an error
         else
             etudiants.add(etudiant);
     }
@@ -83,7 +79,9 @@ public class Promotion {
             sum += etudiant.moyenne();
             n++;
         }
-        return sum / n;
+        if (n >= 0)
+            return sum / n;
+        return 0;
     }
 
     public void afficheResultat() {
@@ -98,7 +96,8 @@ public class Promotion {
 
     public Etudiant recherche(String nom) {
         for (Etudiant etudiant : etudiants) {
-            if (nom == etudiant.getName())
+            if (nom.equals(etudiant.getName())) // WARN - use String.equals() to compare to string, otherwise it
+                                                // compares the memory allocation adress
                 return etudiant;
         }
         return null;
@@ -133,6 +132,31 @@ public class Promotion {
         }
         for (Etudiant etudiant : etudiants) {
             if (etudiant.moyenne() == max) {
+                majors.add(etudiant);
+            }
+        }
+        return majors;
+    }
+
+    public ArrayList<Etudiant> threeMajors() {
+        double first = 0;
+        double second = 0;
+        double third = 0;
+        ArrayList<Etudiant> majors = new ArrayList<Etudiant>();
+        for (Etudiant etudiant : etudiants) {
+            if (etudiant.moyenne() > first) {
+                third = second;
+                second = first;
+                first = etudiant.moyenne();
+            } else if (etudiant.moyenne() > second) {
+                third = second;
+                second = etudiant.moyenne();
+            } else if (etudiant.moyenne() > third) {
+                third = etudiant.moyenne();
+            }
+        }
+        for (Etudiant etudiant : etudiants) {
+            if (etudiant.moyenne() == first || etudiant.moyenne() == second || etudiant.moyenne() == third) {
                 majors.add(etudiant);
             }
         }

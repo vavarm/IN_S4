@@ -18,15 +18,16 @@ public class TestPromotion {
         Etudiant e5 = new Etudiant("Astrid", 1998, Nationalite.FRANCAIS, 10, 10, 0);
         System.out.println(e5);
         Etudiant e6 = new Etudiant("Mohamed", 1998, Nationalite.ETRANGER_NON_FRANCOPHONE, 18, 18, 1);
-        System.out.println(e5);
+        System.out.println(e6);
         Etudiant e7 = new Etudiant("Bjorg", 1998, Nationalite.ETRANGER_NON_FRANCOPHONE, 18, 18, 18);
-        System.out.println(e5);
+        System.out.println(e7);
         Promotion p = new Promotion("groupe PEIP", 2022);
 
         p.inscrire(e1);
         p.inscrire(e2);
         p.inscrire(e3);
         p.inscrire(e6);
+        p.inscrire(e7);
         p.afficheResultat();
         System.out.println(p.moyenneGenerale());
 
@@ -51,6 +52,14 @@ public class TestPromotion {
         System.out.println("==========");
         System.out.println("\n");
         for (Etudiant etudiant : p.majors()) {
+            System.out.println(etudiant);
+            System.out.println("\n");
+        }
+        System.out.println("==========");
+
+        System.out.println("==========");
+        System.out.println("\n");
+        for (Etudiant etudiant : p.threeMajors()) {
             System.out.println(etudiant);
             System.out.println("\n");
         }
