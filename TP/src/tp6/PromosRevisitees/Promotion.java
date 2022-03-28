@@ -1,22 +1,22 @@
-package tp5.Promotion;
+package tp6.PromosRevisitees;
 
 import java.util.*;
 
 public class Promotion {
     private String intitule;
     private int annee;
-    private ArrayList<Etudiant> etudiants;
+    private Map<Integer, Etudiant> etudiants; // WARN - déclaration d'un dictionnaire
 
     public Promotion() {
         this.intitule = "default_promo";
         this.annee = 0000;
-        this.etudiants = new ArrayList<Etudiant>();
+        this.etudiants = new HashMap<Integer, Etudiant>(); // WARN - initialisation d'une HashMap
     }
 
     public Promotion(String intitule, int annee) {
         this.intitule = intitule;
         this.annee = annee;
-        this.etudiants = new ArrayList<Etudiant>();
+        this.etudiants = new HashMap<Integer, Etudiant>();
     }
 
     /**
@@ -50,8 +50,8 @@ public class Promotion {
     /**
      * @return ArrayList<Etudiant> return the etudiants
      */
-    public List<Etudiant> getEtudiants() {
-        return (List<Etudiant>) Collections.unmodifiableList(etudiants);
+    public Map<Integer, Etudiant> getEtudiants() {
+        return (Map<Integer, Etudiant>) Collections.unmodifiableMap(etudiants); // WARN - unmodifiableMap
     }
 
     public Etudiant rechercheIndex(int i) {
@@ -66,16 +66,16 @@ public class Promotion {
     }
 
     public void inscrire(Etudiant etudiant) {
-        if (this.etudiants.contains(etudiant))
+        if (this.etudiants.containsValue(etudiant)) // WARN - containsValue()
             System.out.println("L'étudiant est déjà présent dans la liste"); // WARN - use syserr to print an error
         else
-            etudiants.add(etudiant);
+            etudiants.put(etudiant.getCodeEtu(), etudiant);
     }
 
     public double moyenneGenerale() {
         double sum = 0;
         int n = 0;
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) { // WARN - range values in hashmaps
             sum += etudiant.moyenne();
             n++;
         }
@@ -86,16 +86,15 @@ public class Promotion {
 
     public void afficheResultat() {
         System.out.println("==========");
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             System.out.println(etudiant.ligneResultats());
-            if (etudiants.indexOf(etudiant) < etudiants.size() - 1)
-                System.out.println("\n");
+            System.out.println("\n");
         }
         System.out.println("==========");
     }
 
     public Etudiant recherche(String nom) {
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             if (nom.equals(etudiant.getName())) // WARN - use String.equals() to compare to string, otherwise it
                                                 // compares the memory allocation adress
                 return etudiant;
@@ -105,7 +104,7 @@ public class Promotion {
 
     public ArrayList<Etudiant> admis() {
         ArrayList<Etudiant> etuAdmis = new ArrayList<Etudiant>();
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             if (etudiant.admis()) {
                 etuAdmis.add(etudiant);
             }
@@ -115,7 +114,7 @@ public class Promotion {
 
     public ArrayList<Etudiant> etuEtrangernonFranco() {
         ArrayList<Etudiant> etu = new ArrayList<Etudiant>();
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             if (etudiant.getCodePays() == Nationalite.ETRANGER_NON_FRANCOPHONE) {
                 etu.add(etudiant);
             }
@@ -126,11 +125,11 @@ public class Promotion {
     public ArrayList<Etudiant> majors() {
         double max = 0;
         ArrayList<Etudiant> majors = new ArrayList<Etudiant>();
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             if (etudiant.moyenne() > max)
                 max = etudiant.moyenne();
         }
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             if (etudiant.moyenne() == max) {
                 majors.add(etudiant);
             }
@@ -143,7 +142,7 @@ public class Promotion {
         double second = 0;
         double third = 0;
         ArrayList<Etudiant> majors = new ArrayList<Etudiant>();
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             if (etudiant.moyenne() > first) {
                 third = second;
                 second = first;
@@ -155,7 +154,7 @@ public class Promotion {
                 third = etudiant.moyenne();
             }
         }
-        for (Etudiant etudiant : etudiants) {
+        for (Etudiant etudiant : etudiants.values()) {
             if (etudiant.moyenne() == first || etudiant.moyenne() == second || etudiant.moyenne() == third) {
                 majors.add(etudiant);
             }

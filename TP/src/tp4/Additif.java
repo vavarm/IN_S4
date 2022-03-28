@@ -86,6 +86,7 @@ public abstract class Additif {
 
     public abstract TypeRegime Regime(); // méthode qui est masquée par les méthodes des sous classes
 
-    // TODO : toString()
+    // TODO - toString() create this method and specialize it in sub-classes (with
+    // call to super)
 
 }

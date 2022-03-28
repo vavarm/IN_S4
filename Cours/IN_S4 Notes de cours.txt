@@ -122,3 +122,13 @@ Java
     .keySet() retourne la collection des clés
     .containsKey(TClef key)
     .containsValue(TValue value)
+
+[7 Récursivité]
+    Appel d'une méthode par cette même méthode
+
+    ! : vérifier l'out of bound du tableau parcouru
+        Exemples:
+            if(index == taille liste) then return 0
+            if(liste est vide) then return new Liste
+    Passer en paramètre de la fonction récursive:
+        l'élément à rajouter et la liste d'éléments dans laquelle il faut ajouter

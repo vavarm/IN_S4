@@ -1,15 +1,14 @@
-package tp5.Promotion;
+package tp6.PromosRevisitees;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import tp6.PromosRevisitees.Examen;
-
 public class Etudiant {
 	/* ATTRIBUTS */
 	/* ========= */
+	private int codeEtu;
 	private String name; // nom de l'étudiant
 	private LocalDate dateNaissance; // date de naissance (au moins 5 ans avant la date courante)
 	private int age; // age de l'étudiant (calculé à partir de année de naissance)
@@ -24,6 +23,7 @@ public class Etudiant {
 	// Constructeur par défaut
 	public Etudiant() {
 		setDateNaissance(LocalDateTime.now().minusYears(5).toLocalDate()); // valeur par défaut
+		codeEtu = 0;
 		name = "inconnu"; // valeur par défaut
 		age = -1; // valeur par défaut
 		codePays = Nationalite.INCONNU; // valeur par défaut
@@ -33,7 +33,8 @@ public class Etudiant {
 	}
 
 	// Constructeur paramétré
-	public Etudiant(String name, LocalDate dateNaissance, boolean codeIns, Nationalite codePays) {
+	public Etudiant(int codeEtu, String name, LocalDate dateNaissance, boolean codeIns, Nationalite codePays) {
+		setCodeEtu(codeEtu);
 		this.name = name;
 		setDateNaissance(dateNaissance);
 		this.codeIns = codeIns;
@@ -43,8 +44,9 @@ public class Etudiant {
 		examenBiologie = new Examen(); // idem
 	}
 
-	public Etudiant(String nom, int anneeNaissance, Nationalite codePays,
+	public Etudiant(int codeEtu, String nom, int anneeNaissance, Nationalite codePays,
 			double note1, double note2, double note3) {
+		setCodeEtu(codeEtu);
 		this.name = nom;
 		setDateNaissance(LocalDate.of(anneeNaissance, 1, 1));
 		this.codePays = codePays;
@@ -56,6 +58,17 @@ public class Etudiant {
 	/* METHODS */
 	/* ======= */
 	// Getters & Setters
+
+	// getter de codeEtu
+	public int getCodeEtu() {
+		return codeEtu;
+	}
+
+	// setter de codeEtu
+	public void setCodeEtu(int codeEtu) {
+		this.codeEtu = codeEtu;
+	}
+
 	// getter de name
 	public String getName() {
 		return name;
