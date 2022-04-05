@@ -28,7 +28,7 @@ Règle de redéfinition d’une méthode pour la liaison dynamique:
     
 instanceOf : vérifie la classe de l’objet
 (Classe) : réalise un typecast
-@Override : annotation recommandée devant la méthode, pour vérifier la règle de bonne redéfinition par le compilateur
+@Override : annotation recommandée devant la méthode, pour vérifier la règle de bonne redéfinition par le compilateur. Appeler super dans le corps de la méthode
 
 obj1.equals(obj2) : true si obj1=obj2 (valable aussi pour les String)
 
@@ -132,3 +132,58 @@ Java
             if(liste est vide) then return new Liste
     Passer en paramètre de la fonction récursive:
         l'élément à rajouter et la liste d'éléments dans laquelle il faut ajouter
+
+[8 Interfaces]
+    (SYSML = UML pour les systèmes cyber-physiques (modélisation avec composants logiciels et matériels))
+    (programmation par composants != programmation par objets != programmation par évènements (interfaces graphiques))
+    (masquage d'implémentation)
+
+    UML:
+        -interface fournie (offre la possibilité de se connecter à une autre classe) (1)
+        -interface requise (2)
+
+        illustration par:
+            -ronds (1) et demi-lunes (2) en liant des classes ensemble
+            -<<interface>> (extends: flèche en ligne pleine, implements: flèche en pointillés)
+
+    JAVA:
+        extends: entre interfaces
+        implements: entre classes et interfaces
+
+        ! rendre les attributs d'une interface publics sinon on n'y a pas accès dans les classes qui en dérivent
+
+        Exemple: (avec InterfaceTruc qui dérive de InterfaceMachin)
+        public interface InterfaceTruc extends InterfaceMachin {
+            public static final int CONSTANT = 4;
+            abstract public float method();
+            ...
+        }
+
+        Simplification de l'exemple:
+        public interface InterfaceTruc extends InterfaceMachin {
+            int CONSTANT = 4;
+            float method();
+            ...
+        }
+
+        Dans les classes qui dérivent des interfaces, on donne un corps aux méthodes abstraites des interfaces
+
+        On ne peut pas instancier des interfaces
+        mais on peut écrire: InterfaceTruc it = new Truc(); avec Truc une classe qui dérive de InterfaceTruc (par affectation polymorphe)
+
+        Dans une classe, on fait appel aux attributs des interfaces avec InterfaceTruc.attribute
+
+        default permet d'implémenter le corps des méthodes dans les interfaces
+        static permet d'implémenter une méthode statique dans une interface
+
+        on ne peut pas override de méthodes d'Object dans les interfaces (exemple: nommer la méthode "toString" en "String" dans l'interface)
+
+        héritage multiple impossible entre classes mais possible entre interfaces (via extends)
+
+        résolution explicite de conflit en appelant InterfaceTruc.super.meth()
+
+        Interfaces spéciales:
+            -Cloneable (3 niveaux de copie)
+            -Serializable (readObject, writeObject)
+
+        throws, exception
