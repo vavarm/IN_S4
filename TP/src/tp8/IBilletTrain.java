@@ -16,7 +16,12 @@ public interface IBilletTrain {
         return map;
     }
 
-    public static final Map<TypeTarif, Double> TAUX_REMBOURSEMENT = setTauxRemboursement(); // Map constante
+    public static final Map<TypeTarif, Double> TAUX_REMBOURSEMENT = setTauxRemboursement(); // constant map (all the
+                                                                                            // attributes in an
+                                                                                            // interface must be
+                                                                                            // constants)
+                                                                                            // (constant <=>
+                                                                                            // final static)
 
     long getDateHeure(); // public abstract method
 
