@@ -18,7 +18,7 @@ public interface IBilletTrain {
 
     public static final Map<TypeTarif, Double> TAUX_REMBOURSEMENT = setTauxRemboursement(); // Map constante
 
-    int getDateHeure(); // public abstract method
+    long getDateHeure(); // public abstract method
 
     String getOrigine();
 
@@ -33,6 +33,7 @@ public interface IBilletTrain {
     }
 
     default double getTarifRemboursement() {
-        return TAUX_REMBOURSEMENT.get(getTypeTarif()) * getPrix();
+        return TAUX_REMBOURSEMENT.get(getTypeTarif()) * getPrix(); // multiply the rate in the constant map with the
+                                                                   // price
     }
 }

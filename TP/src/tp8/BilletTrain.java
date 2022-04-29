@@ -1,8 +1,8 @@
 package tp8;
 
-public class BilletTrain implements IBilletTrain {
+public abstract class BilletTrain implements IBilletTrain {
     // attributes
-    private int dateHeure;
+    private long dateHeure;
     private String origine;
     private String destination;
     private TypeTarif typeTarif;
@@ -12,7 +12,7 @@ public class BilletTrain implements IBilletTrain {
     public BilletTrain() {
     }
 
-    public BilletTrain(int dateHeure, String origine, String destination, TypeTarif typeTarif, double prix) {
+    public BilletTrain(long dateHeure, String origine, String destination, TypeTarif typeTarif, double prix) {
         setDateHeure(dateHeure);
         setOrigine(origine);
         setDestination(destination);
@@ -24,14 +24,14 @@ public class BilletTrain implements IBilletTrain {
     /**
      * @return int return the dateHeure
      */
-    public int getDateHeure() {
+    public long getDateHeure() {
         return dateHeure;
     }
 
     /**
      * @param dateHeure the dateHeure to set
      */
-    public void setDateHeure(int dateHeure) {
+    public void setDateHeure(long dateHeure) {
         this.dateHeure = dateHeure;
     }
 
